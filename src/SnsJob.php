@@ -28,7 +28,7 @@ class SnsJob extends SqsJob
 
         $payload['job'] = 'Illuminate\Queue\CallQueuedHandler@call';
 
-        $attributes = [];
+        $attributes = $payload['MessageAttributes'] ?? [];
 
         $command = $this->map->fromTopic(
             $payload['TopicArn'],
