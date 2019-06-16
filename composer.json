@@ -1,0 +1,32 @@
+{
+  "name": "customergauge/laravel-queue-sns-lib",
+  "description": "SNS Driver for Laravel Queue component.",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Marco Deleu",
+      "email": "deleugyn@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.2",
+    "illuminate/queue": "^5.5",
+    "aws/aws-sdk-php": "^3.100"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^8.0",
+    "doctrine/coding-standard": "^6.0",
+    "phpstan/phpstan": "^0.11.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "CustomerGauge\\Laravel\\Queue\\Sns\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Test\\CustomerGauge\\Laravel\\Queue\\Sns\\": "tests/"
+    }
+  }
+}
