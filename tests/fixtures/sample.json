@@ -1,0 +1,13 @@
+{
+  "Type" : "Notification",
+  "MessageId" : "21axbyj0-52x1-0834-k4h8-p36c7v19543j",
+  "TopicArn" : "arn:aws:sns:eu-west-1:000000000000:localstack",
+  "Subject" : "Topic Subject",
+  "Message" : "{\"provider\":\"customergauge\",\"laravel\":true}",
+  "Timestamp" : "2019-06-16T18:29:45.688Z",
+  "SignatureVersion" : "1",
+  "Signature" : "message-signature",
+  "SigningCertURL" : "certificate.pem",
+  "UnsubscribeURL" : "unsubscribe-url",
+  "MessageAttributes" : {"author" : {"Type":"String","Value":"deleugyn@gmail.com"}}
+}
