@@ -15,4 +15,9 @@ class TopicException extends Exception
     {
         return new self("Topic [$topic] is not mapped to any Job.");
     }
+
+    public static function empty(): self
+    {
+        return new self("There should be at least one Topic Arn mapped to a job class");
+    }
 }

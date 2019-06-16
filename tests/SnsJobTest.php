@@ -3,6 +3,7 @@
 namespace Tests\CustomerGauge\Laravel\Queue\Sns;
 
 use Aws\Sqs\SqsClient;
+use CustomerGauge\Laravel\Queue\Sns\Contracts\Processable;
 use CustomerGauge\Laravel\Queue\Sns\Exceptions\TopicException;
 use CustomerGauge\Laravel\Queue\Sns\JobMap;
 use CustomerGauge\Laravel\Queue\Sns\SnsJob;
@@ -59,7 +60,9 @@ class SnsJobTest extends TestCase
     }
 }
 
-class MyFakeJob
+class MyFakeJob implements Processable
 {
-
+    public function __construct(array $data, array $attributes)
+    {
+    }
 }

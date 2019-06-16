@@ -29,5 +29,12 @@
     "psr-4": {
       "Test\\CustomerGauge\\Laravel\\Queue\\Sns\\": "tests/"
     }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "CustomerGauge\\Laravel\\Queue\\Sns\\SnsQueueServiceProvider"
+      ]
+    }
   }
 }

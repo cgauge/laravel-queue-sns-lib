@@ -2,6 +2,7 @@
 
 namespace Tests\CustomerGauge\Laravel\Queue\Sns;
 
+use CustomerGauge\Laravel\Queue\Sns\Contracts\Processable;
 use CustomerGauge\Laravel\Queue\Sns\Exceptions\TopicException;
 use CustomerGauge\Laravel\Queue\Sns\JobMap;
 use PHPUnit\Framework\TestCase;
@@ -33,7 +34,7 @@ class JobMapTest extends TestCase
     }
 }
 
-class SampleJob
+class SampleJob implements Processable
 {
     public $data;
 
