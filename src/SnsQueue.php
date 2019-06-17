@@ -1,9 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CustomerGauge\Laravel\Queue\Sns;
 
 use Aws\Sqs\SqsClient;
 use Illuminate\Queue\SqsQueue;
+use function count;
+use function is_null;
 
 class SnsQueue extends SqsQueue
 {
@@ -25,8 +29,12 @@ class SnsQueue extends SqsQueue
 
         if (! is_null($response['Messages']) && count($response['Messages']) > 0) {
             return new SnsJob(
-                $this->container, $this->sqs, $response['Messages'][0],
-                $this->connectionName, $queue, $this->map
+                $this->container,
+                $this->sqs,
+                $response['Messages'][0],
+                $this->connectionName,
+                $queue,
+                $this->map
             );
         }
     }

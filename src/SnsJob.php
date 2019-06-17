@@ -1,11 +1,16 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CustomerGauge\Laravel\Queue\Sns;
 
 use Aws\Sqs\SqsClient;
 use CustomerGauge\Laravel\Queue\Sns\Exceptions\TopicException;
 use Illuminate\Container\Container;
 use Illuminate\Queue\Jobs\SqsJob;
+use function get_class;
+use function json_decode;
+use function serialize;
 
 class SnsJob extends SqsJob
 {
@@ -43,7 +48,7 @@ class SnsJob extends SqsJob
         return $payload;
     }
 
-    protected function convertMessageToArray($message): array
+    protected function convertMessageToArray($message) : array
     {
         return (array) json_decode($message, true);
     }

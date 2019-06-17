@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CustomerGauge\Laravel\Queue\Sns\Contracts;
 
 interface Processable

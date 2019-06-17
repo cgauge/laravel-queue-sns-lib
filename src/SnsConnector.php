@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CustomerGauge\Laravel\Queue\Sns;
 
 use Aws\Sqs\SqsClient;
@@ -23,7 +25,9 @@ class SnsConnector extends SqsConnector implements ConnectorInterface
         }
 
         return new SnsQueue(
-            new SqsClient($config), $config['queue'], new JobMap($config['map'])
+            new SqsClient($config),
+            $config['queue'],
+            new JobMap($config['map'])
         );
     }
 }
